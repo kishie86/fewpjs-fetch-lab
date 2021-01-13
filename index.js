@@ -11,6 +11,12 @@ function renderBooks(books) {
   })
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  fetchBooks()
+document.addEventListener('DOMContentLoaded', function fetchBooks() {
+  let proxyUrl = 'https://cors-anywhere.herokuapp.com/'
+  targetUrl = 'https://anapioficeandfire.com/api/books'
+  return fetch(proxyUrl + tragetUrl) .then(resp => resp.json()).then(json => renderBooks(json));
+
+ 
 })
+
+ 
